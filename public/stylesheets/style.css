@@ -6,3 +6,8 @@ body {
 a {
     color: #00B7FF;
 }
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    margin-right: inherit;
+    text-transform: inherit;
+}

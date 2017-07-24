@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    h1(class="header")= title
+    block posts
+    - for (var i = 0; i < posts.length; i++) {
+    - post = posts[i]
+        div(class="card large")
+            div(class="card-content")
+                h3(class="card-title")= post.title
+                p= post.content
+                div(class="card-action")
+                    div(class="right-align")
+                        - if (post.tags) {
+                            - for (var j = 0; j < post.tags.length; j++) {
+                                a(href="/tags/" + post.tags[j])
+                                    div(class="chip")= post.tags[j]
+                            - }
+                        - }
+    - }
