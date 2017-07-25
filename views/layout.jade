@@ -6,9 +6,17 @@ html
         link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet", href="http://materializecss.com/css/ghpages-materialize.css")
 
+        link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css")
+
         link(rel="stylesheet", href="/stylesheets/style.css")
 
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
     body
         div(class="container")
             block content
+        footer(class="page-footer")
+            p(class="white-text") Built By Brae Webb for DECO1800
+
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js")
+        block scripts

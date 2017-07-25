@@ -1,6 +1,12 @@
 body {
-    padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 a {
@@ -10,4 +16,14 @@ a {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
     margin-right: inherit;
     text-transform: inherit;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 2px 2px;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding: 16px 24px;
 }

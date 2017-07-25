@@ -6,15 +6,19 @@ block content
     - for (var i = 0; i < posts.length; i++) {
     - post = posts[i]
         div(class="card large")
+            - if (post.background){
+                div(class="card-image")
+                    img(class="responsive-img" src="images/" + post.background + ".jpg")
+            - }
             div(class="card-content")
-                h3(class="card-title")= post.title
-                p= post.content
-                div(class="card-action")
-                    div(class="right-align")
-                        - if (post.tags) {
-                            - for (var j = 0; j < post.tags.length; j++) {
-                                a(href="/tags/" + post.tags[j])
-                                    div(class="chip")= post.tags[j]
-                            - }
+                h5(class="header card-title")= post.title
+                p!= format(post.content)
+            div(class="card-footer")
+                - if (post.tags) {
+                    div(class="right")
+                        - for (var j = 0; j < post.tags.length; j++) {
+                            a(href="/tags/" + post.tags[j])
+                                div(class="chip")= post.tags[j]
                         - }
+                - }
     - }
