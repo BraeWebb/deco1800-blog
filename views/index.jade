@@ -8,7 +8,7 @@ block content
         div(class="card")
             - if (post.background){
                 div(class="card-image")
-                    img(class="responsive-img" src="images/" + post.background + ".jpg")
+                    img(class="responsive-img" src="/images/" + post.background + ".jpg")
             - }
             div(class="card-content")
                 h5(class="header card-title")= post.title
@@ -17,7 +17,7 @@ block content
                 - if (post.tags) {
                 div(class="tags")
                     - for (var j = 0; j < post.tags.length; j++) {
-                    a(href="/tags/" + post.tags[j])
+                    a(href="/tag/" + post.tags[j])
                         div(class="chip")= post.tags[j]
                     - }
                 - }

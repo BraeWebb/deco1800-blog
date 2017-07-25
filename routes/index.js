@@ -17,4 +17,10 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/tag/:tag', function(req, res, next){
+    Post.find({tags: {$in: [req.params.tag]}}).sort({date: -1}).exec(function(err, posts){
+        res.render('index', { title: 'DECO1800 Blog - ' + req.params.tag, posts: posts, format: format});
+    });
+});
+
 module.exports = router;
