@@ -12,14 +12,13 @@ block content
             - }
             div(class="card-content")
                 h5(class="header card-title")= post.title
-                p!= format(post.content)
+                p(class="content")!= format(post.content)
             div(class="card-footer")
                 - if (post.tags) {
-                    div
-                        - for (var j = 0; j < post.tags.length; j++) {
-                            a(href="/tags/" + post.tags[j])
-                                div(class="chip")= post.tags[j]
-                        - }
-                    span(class="clear")
+                div(class="tags")
+                    - for (var j = 0; j < post.tags.length; j++) {
+                    a(href="/tags/" + post.tags[j])
+                        div(class="chip")= post.tags[j]
+                    - }
                 - }
     - }

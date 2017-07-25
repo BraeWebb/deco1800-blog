@@ -25,7 +25,7 @@ var format = function (string) {
             // Highlight the code with HTML.
             newCode = highlight.highlightAuto(newCode).value;
             // Wrap in a <pre> bow.
-            newCode = "<pre class='code'>" + newCode + "</pre>";
+            newCode = "<pre class='hljs code'>" + newCode + "</pre>";
 
             formatted = formatted.replace(original, newCode);
         }
