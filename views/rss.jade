@@ -1,0 +1,17 @@
+doctype xml
+rss(version='2.0', xmlns:atom="http://www.w3.org/2005/Atom")
+    channel
+        title DECO1800 Blog
+        link http://deco1800-blog.braewebb.com
+        atom:link(href="http://deco1800-blog.braewebb.com/.rss", rel='self', type='application/rss+xml')
+        description Blog for the Design Computing Studio 1
+        language en-US
+        if posts.length
+            lastBuildDate= new Date(posts[0].date).toUTCString()
+        each post in posts
+            item
+                title= post.title
+                link http://deco1800-blog.braewebb.com/posts/#{post.id}
+                description= post.title
+                pubDate= new Date(post.date).toUTCString()
+                guid(isPermaLink='false') http://deco1800-blog.braewebb.com/posts/#{post.id}
