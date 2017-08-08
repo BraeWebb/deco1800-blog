@@ -4,8 +4,13 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/deco1800-blog');
 
-var postSchema = require("../data/posts.js");
-var Post = mongoose.model("posts", postSchema);
+var postData = require("../data/posts.js");
+var Post = mongoose.model("posts", postData.schema);
+
+Post.collection.drop(function(err, collection){
+    Post.collection.insertMany(postData.data);
+});
+
 
 var format = require("../modules/formatter");
 
